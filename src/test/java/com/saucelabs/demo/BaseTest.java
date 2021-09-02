@@ -33,7 +33,7 @@ public class BaseTest
 		//ChromeOptions cap=new ChromeOptions();
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("sauce:options", sauceOpts);
-		cap.setCapability("browserVersion", "");
+		cap.setCapability("browserVersion", System.getenv("SELENIUM_BROWSER"));
 		cap.setCapability("platformName","");
 		WebDriverManager.chromedriver().setup();
 		cap.setCapability("browserName", "");
