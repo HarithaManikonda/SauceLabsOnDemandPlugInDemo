@@ -19,7 +19,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest 
 {
 	WebDriver driver;
-	@Parameters({"browser", "platform", "version"})
 	@BeforeMethod
 	public void setUp() 
 	{
