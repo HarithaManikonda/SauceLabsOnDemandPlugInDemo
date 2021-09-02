@@ -36,7 +36,7 @@ public class BaseTest
 		cap.setCapability("browserVersion", "");
 		cap.setCapability("platformName","");
 		WebDriverManager.chromedriver().setup();
-		cap.setCapability("browserName", "chrome");
+		cap.setCapability("browserName", "");
 
 		try 
 		{
