@@ -26,12 +26,15 @@ public class BaseTest
 		MutableCapabilities sauceOpts=new MutableCapabilities();
 		sauceOpts.setCapability("build", "Java-W3C-Examples");
 		sauceOpts.setCapability("seleniumVersion", "3.141.59");
+		sauceOpts.setCapability("username", System.getenv("SAUCE_USERNAME"));
+		sauceOpts.setCapability("accessKey", System.getenv("SAUCE_ACCESS_KEY"));
 		sauceOpts.setCapability("tags", "w3c-chrome-tests");	
 
 		//ChromeOptions cap=new ChromeOptions();
 		DesiredCapabilities cap=new DesiredCapabilities();
 		cap.setCapability("sauce:options", sauceOpts);
-
+		cap.setCapability("browserVersion", "");
+		cap.setCapability("platformName","");
 
 		try 
 		{
