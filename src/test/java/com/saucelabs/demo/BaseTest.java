@@ -35,6 +35,8 @@ public class BaseTest
 		cap.setCapability("sauce:options", sauceOpts);
 		cap.setCapability("browserVersion", "85.0");
 		cap.setCapability("platformName","macOS 10.15");
+		WebDriverManager.chromedriver().setup();
+		cap.setCapability("browserName", "chrome");
 
 		try 
 		{
