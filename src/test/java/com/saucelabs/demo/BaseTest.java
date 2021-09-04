@@ -38,7 +38,7 @@ public class BaseTest
 		cap.setCapability("platformName",System.getenv("SELENIUM_PLATFORM"));
 		WebDriverManager.chromedriver().setup();
 		cap.setCapability("browserName", System.getenv("SELENIUM_BROWSER"));*/
-		
+		WebDriverManager.chromedriver().setup();
 		cap.setCapability("sauce:options", sauceOpts);
 		cap.setBrowserName(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
 		cap.setVersion(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
