@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
@@ -33,18 +32,11 @@ public class BaseTest
 
 		//ChromeOptions cap=new ChromeOptions();
 		DesiredCapabilities cap=new DesiredCapabilities();
-		/*cap.setCapability("sauce:options", sauceOpts);
+		cap.setCapability("sauce:options", sauceOpts);
 		cap.setCapability("browserVersion", System.getenv("SELENIUM_VERSION"));
 		cap.setCapability("platformName",System.getenv("SELENIUM_PLATFORM"));
 		WebDriverManager.chromedriver().setup();
-		cap.setCapability("browserName", System.getenv("SELENIUM_BROWSER"));*/
-		
-		cap.setCapability("sauce:options", sauceOpts);
-		cap.setBrowserName(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
-		cap.setVersion(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
-		cap.setCapability(CapabilityType.PLATFORM, System.getenv("SAUCE_ONDEMAND_BROWSERS"));
-		WebDriverManager.chromedriver().setup();
-		//cap.setCapability(build, System.getenv("SAUCE_BUILD_NAME"));
+		cap.setCapability("browserName", System.getenv("SELENIUM_BROWSER"));
 
 		try 
 		{
