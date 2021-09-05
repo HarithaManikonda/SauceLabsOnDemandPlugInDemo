@@ -14,11 +14,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-public class BaseTest 
+public class BaseTest
 {
 	WebDriver driver;
+	private ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
+	private ThreadLocal<String> sessionId = new ThreadLocal<String>();
 	@BeforeMethod
 	public void setUp() 
 	{
@@ -38,6 +38,8 @@ public class BaseTest
 		cap.setCapability("platformName",System.getenv("SELENIUM_PLATFORM"));
 		//WebDriverManager.chromedriver().setup();
 		cap.setCapability("browserName", System.getenv("SELENIUM_BROWSER"));
+		String id=((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+		sessionId.set(id);
 
 		try 
 		{
@@ -54,7 +56,13 @@ public class BaseTest
 		{
 			driver.quit();
 		}
-	
+	    public WebDriver getWebDriver() {
+	    	return webDriver.get();
+	    }
+	    public String getSessionId() {
+	    	return sessionId.get();
+	    }
+	    
 	
 
 }
