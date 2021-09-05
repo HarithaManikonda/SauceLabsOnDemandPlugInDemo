@@ -38,7 +38,7 @@ public class BaseTest
 		cap.setCapability("platformName",System.getenv("SELENIUM_PLATFORM"));
 		//WebDriverManager.chromedriver().setup();
 		cap.setCapability("browserName", System.getenv("SELENIUM_BROWSER"));
-		String id=((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+		String id="843599348594385";
 		sessionId.set(id);
 
 		try 
